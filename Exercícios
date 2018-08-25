@@ -95,6 +95,68 @@ public class Exercicio2 {
 
 }
 
+// Exercicio 3//
+
+import java.util.Scanner;
+
+public class Exercicio3 {
+
+  private static void programa() {
+    // Scanner s = new Scanner(System.in);
+
+    System.out.println("Digite as horas trabalhadas: ");
+    // double horasTrabalhadas = s.nextDouble();
+    double horasTrabalhadas = 180;
+
+    System.out.println("Digite valor minimo do salario: ");
+    // double salarioBase = s.nextDouble();
+    double salarioBase = 2500;
+
+    double valorPorHoraTrabalhada = salarioBase * 0.1; // 10%
+
+    double salarioBruto = horasTrabalhadas * valorPorHoraTrabalhada;
+
+    double imposto = salarioBruto * 0.03; // 3%
+
+    System.out.println("O salario do funcionario no mes é " + (salarioBruto - imposto));
+  }
+
+  public static void main(String[] args) {
+    programa();
+  }
+
+}
+
+//Exercício 4 //
+
+import java.util.Scanner;
+import java.lang.Math;
+
+public class Exercicio4 {
+
+  private static void programa() {
+    Scanner s = new Scanner(System.in);
+
+    System.out.println("Digite em metros quadrados a area que sera pintada: ");
+    // double area = s.nextDouble();
+    double area = 108;
+
+    double litrosNecessarios = area / 3;
+
+    long latasNecessarias = Math.round( litrosNecessarios / 18 );
+
+    double valorTotal = latasNecessarias * 80;
+
+    System.out.println("Latas necessarias: " + latasNecessarias);
+    System.out.println("Valor total gasto: " + valorTotal);
+  }
+
+  public static void main(String[] args) {
+    programa();
+  }
+
+}
+
 
 //Exercício 5 //
 
@@ -149,6 +211,77 @@ public class Conta {
 }
 
 // Exercício 6 //
+
+import java.util.Scanner;
+
+public class Exercicio6 {
+
+  private static void programa() {
+    Scanner s = new Scanner(System.in);
+
+    System.out.println("Digite o comprimento: ");
+    // int comprimento = s.nextInt();
+    int comprimento = 2;
+
+    System.out.println("Digite a largura: ");
+    // int largura = s.nextInt();
+    int largura = 2;
+
+    Retangulo retangulo = new Retangulo(comprimento, largura);
+
+    System.out.println("Area do retangulo: "+ retangulo.calcularArea());
+    System.out.println("Perimetro do retangulo: "+ retangulo.calcularArea());
+
+    // e calcular a quantidade de pisos e de rodapés necessárias para o local. - ????????
+  }
+
+  public static void main(String[] args) {
+    programa();
+  }
+
+}
+
+//Retângulo//
+
+public class Retangulo {
+
+    private double comprimento;
+    private double largura;
+
+    // construtores
+
+    public Retangulo(double comprimento, double largura) {
+        this.comprimento = comprimento;
+        this.largura = largura;
+    }
+
+    // metodos
+
+    public double getComprimento() {
+        return comprimento;
+    }
+
+    public void setComprimento(double comprimento) {
+        this.comprimento = comprimento;
+    }
+
+    public double getLargura() {
+        return largura;
+    }
+
+    public void setLargura(double largura) {
+        this.largura = largura;
+    }
+
+    public double calcularArea() {
+        return comprimento * largura;
+    }
+
+    public double calcularPerimetro() {
+        return (2 * comprimento) + (2 * largura);
+    }
+
+}
 
 
 
