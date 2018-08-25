@@ -1,0 +1,155 @@
+//Exercício 1//
+
+public class Exercicio1 {
+
+  private static double programa() {
+    double fator = 2;
+
+    double aumentoInicial = 1.5;
+    double salario = 1000;
+    int anoContratacao = 2005;
+
+    int anoAtual = 2007;
+
+    int anoFor = anoContratacao;
+    double aumentoFor = aumentoInicial;
+    double salarioFinal = salario;
+
+    while (anoFor < anoAtual) {
+      anoFor++;
+      if (anoContratacao + 1 != anoFor) {
+        aumentoFor = aumentoFor * fator;
+      }
+      salarioFinal = salarioFinal + (salarioFinal * aumentoFor / 100);
+    }
+
+    return salarioFinal;
+  }
+
+  public static void main(String[] args) {
+    System.out.print(programa());
+  }
+
+}
+
+
+//Exercício 2 //
+
+import java.util.Scanner;
+
+public class Exercicio2 {
+
+  private static void programa() {
+    Scanner s = new Scanner(System.in);
+
+    System.out.println("Digite o inicial número do intervalo: ");
+    // int ninicial = s.nextInt();
+    int ninicial = 1;
+
+    System.out.println("Digite o final número do intervalo: ");
+    // int nfinal = s.nextInt();
+    int nfinal = 14;
+
+    if (ninicial <= 0) {
+      System.out.println("O número inicial deve ser maior que zero.");
+      return;
+    }
+
+    if (ninicial >= nfinal) {
+      System.out.println("O número inicial deve ser menor que o numero final.");
+      return;
+    }
+
+    StringBuilder sb = new StringBuilder();
+
+    int ninicialWhile = ninicial;
+    while (ninicialWhile < nfinal) {
+      if (isPrimo(ninicialWhile)) {
+        sb.append(ninicialWhile + " ");
+      }
+      ninicialWhile++;
+    }
+
+    System.out.println("A sequencia é "+  sb.toString().trim());
+  }
+
+  private static boolean isPrimo(int numero) {
+    if (numero == 1) {
+      return false;
+    }
+
+    int numeroWhile = 2;
+    while (numeroWhile < numero) {
+      if (numero % numeroWhile == 0) {
+        return false;
+      }
+      numeroWhile++;
+    }
+
+    return true;
+  }
+
+  public static void main(String[] args) {
+    programa();
+  }
+
+}
+
+
+//Exercício 5 //
+
+public class Conta {
+
+    private String numeroConta;
+    private String nomeCorrentista;
+    private double saldo;
+
+    // construtores
+
+    public Conta(String numeroConta, String nomeCorrentista) {
+        this(numeroConta, nomeCorrentista, 0d);
+    }
+
+    public Conta(String numeroConta, String nomeCorrentista, double saldo) {
+        super();
+        this.numeroConta = numeroConta;
+        this.nomeCorrentista = nomeCorrentista;
+        this.saldo = saldo;
+    }
+
+    // metodos
+
+    public String getNumeroConta() {
+        return numeroConta;
+    }
+
+    public String getNomeCorrentista() {
+        return nomeCorrentista;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void alterarNome(String nomeCorrentista) {
+        this.nomeCorrentista = nomeCorrentista;
+    }
+
+    public void deposito(double valorDeposito) {
+        saldo = saldo + valorDeposito;
+    }
+
+    public void saque(double valorSaque) {
+        if (valorSaque > saldo) {
+            throw new Exception("Saldo disponivel é: " + saldo);
+        }
+        saldo = saldo - valorSaque;
+    }
+
+}
+
+// Exercício 6 //
+
+
+
+
