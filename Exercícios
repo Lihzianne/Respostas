@@ -231,15 +231,15 @@ public class Aplicativo {
     System.out.println("Digite o comprimento da àrea retangular: ");
     double comprimento = s.nextDouble();
 
-    //área do rodapé é obtida separadamente, e apenas o dado da altura é obtido
+    //área do rodapé é obtida separadamente, e apenas o dado da largura é obtido, pois sua altura é padrão//
 
     System.out.println("Digite a largura da àrea do rodapé: ");
     double largura_area_rodape = s.nextDouble();
  
-    //Piso em formato quadrado. A altura do rodapé é padrão
+    //Medida do piso em formato quadrado. A altura do rodapé é padrão em 10 cm//
     int medida_do_piso = 100;
 
-    int largura_do_rodape = 10 ;
+    int altura_do_rodape = 10 ;
 
     double total_pisos_necessarios = (largura * comprimento) / medida_do_piso;
 
