@@ -212,6 +212,57 @@ public class Conta {
 
 // Exercício 6 //
 
+//aplicativo//
+//OBS:
+1 - área do rodapé é obtida separadamente da área total do retângulo
+2 - altura padrão do rodapé é de 10cm//
+
+import java.util.Scanner;
+import java.lang.Math;
+
+public class Aplicativo {
+
+  private static void programa() {
+    Scanner s = new Scanner(System.in);
+
+    System.out.println("Digite a largura da àrea retangular: ");
+    double largura = s.nextDouble();
+
+    System.out.println("Digite altura da àrea retangular: ");
+    double altura = s.nextDouble();
+
+    //área do rodapé é obtida separadamente
+
+    System.out.println("Digite a largura da àrea do rodapé: ");
+    double largura_area_rodape = s.nextDouble();
+ 
+    //Piso em formato quadrado. A altura do rodapé é padrão
+    int medida_do_piso = 100;
+
+    int largura_do_rodape = 10 ;
+
+    double total_pisos_necessarios = (largura * altura) / medida_do_piso;
+
+    long rodapes_necessarios = Math.round( total_pisos_necessarios / largura_do_rodape );
+
+    double valor_total_pisos = total_pisos_necessarios * medida_do_piso;
+    double valor_total_rodapes = rodapes_necessarios * largura_do_rodape;
+
+    System.out.println("Pisos necessarios: " + total_pisos_necessarios);
+    System.out.println("Valor total dos rodapés: " + valor_total_rodapes);
+  }
+
+  public static void main(String[] args) {
+    programa();
+  }
+
+}
+
+
+
+
+
+
 import java.util.Scanner;
 
 public class Exercicio6 {
