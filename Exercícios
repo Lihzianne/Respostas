@@ -228,10 +228,10 @@ public class Aplicativo {
     System.out.println("Digite a largura da àrea retangular: ");
     double largura = s.nextDouble();
 
-    System.out.println("Digite altura da àrea retangular: ");
-    double altura = s.nextDouble();
+    System.out.println("Digite o comprimento da àrea retangular: ");
+    double comprimento = s.nextDouble();
 
-    //área do rodapé é obtida separadamente
+    //área do rodapé é obtida separadamente, e apenas o dado da altura é obtido
 
     System.out.println("Digite a largura da àrea do rodapé: ");
     double largura_area_rodape = s.nextDouble();
@@ -241,7 +241,7 @@ public class Aplicativo {
 
     int largura_do_rodape = 10 ;
 
-    double total_pisos_necessarios = (largura * altura) / medida_do_piso;
+    double total_pisos_necessarios = (largura * comprimento) / medida_do_piso;
 
     long rodapes_necessarios = Math.round( total_pisos_necessarios / largura_do_rodape );
 
@@ -257,11 +257,6 @@ public class Aplicativo {
   }
 
 }
-
-
-
-
-
 
 import java.util.Scanner;
 
@@ -283,7 +278,7 @@ public class Exercicio6 {
     System.out.println("Area do retangulo: "+ retangulo.calcularArea());
     System.out.println("Perimetro do retangulo: "+ retangulo.calcularArea());
 
-    // e calcular a quantidade de pisos e de rodapés necessárias para o local. - ????????
+    
   }
 
   public static void main(String[] args) {
